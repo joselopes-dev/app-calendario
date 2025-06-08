@@ -215,19 +215,22 @@
   </script>
 
   <!-- Service Worker -->
-  <script defer>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(registration => {
-            console.log('ServiceWorker registrado com sucesso:', registration);
-          })
-          .catch(err => {
-            console.log('Falha no registro do ServiceWorker:', err);
-          });
-      });
-    }
-  </script>
+  <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(reg => {
+    reg.onupdatefound = () => {
+      const newWorker = reg.installing;
+      newWorker.onstatechange = () => {
+        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+          console.log('Nova versão do PWA detectada. Atualizando...');
+          window.location.reload(); // Força atualização
+        }
+      };
+    };
+  });
+}
+</script>
+
 </body>
 </html>
 
