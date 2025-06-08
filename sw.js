@@ -3,10 +3,9 @@ const OFFLINE_PAGE = '/index.html';
 const ASSETS = [
   '/',
   '/index.html',
-  '/style.css',
-  '/script.js',
   '/manifest.json',
   '/icons/icon-192.png',
+  'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
   '/icons/icon-512.png'
   // Adicione outros assets estáticos aqui (CSS, JS, fonts)
 ];
