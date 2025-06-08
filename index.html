@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +25,7 @@
       perspective: 1000px;
       width: calc(100% / 6 - 10px);
       aspect-ratio: 1 / 1;
+      cursor: pointer;
     }
 
     .card-inner {
@@ -36,7 +36,6 @@
       transform-style: preserve-3d;
     }
 
-    .card-flip:hover .card-inner,
     .card-flip.flip .card-inner {
       transform: rotateY(180deg);
     }
@@ -87,12 +86,12 @@
       }
 
       .card-back {
-      font-size: 11px;
-    }
+        font-size: 11px;
+      }
 
-    #texto {
-      font-size: 25px;
-    }
+      #texto {
+        font-size: 25px;
+      }
     }
   </style>
   <title>Calendário de Eventos</title>
@@ -101,134 +100,134 @@
 <body>
 
   <button id="installBtn" style="z-index: 1; display: none; position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-        📲 Instalar App
-    </button>
-    
+    📲 Instalar App
+  </button>
+
   <div class="container py-4">
     <h1 id="texto" class="text-center mb-4">Calendário de Eventos - 2025 <br> IDPB-BETÂNIA - I</h1>
     <div class="calendar">
-      <!--<div class="card-flip" onclick="this.classList.toggle('flip')">
-        <div class="card-inner">
-          <div class="card-front">Janeiro</div>
-          <div class="card-back">18 - Vigília-casais<br>23 - Cinema mulheres<br>24 - Oração tabitas<br>25 - Rede homens</div>
-        </div>
-      </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
-        <div class="card-inner">
-          <div class="card-front">Fevereiro</div>
-          <div class="card-back">14 - <br>28 - Outro Evento</div>
-        </div>
-      </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
-        <div class="card-inner">
-          <div class="card-front">Março</div>
-          <div class="card-back">08 - Dia da Mulher<br>15 - Evento Local</div>
-        </div>
-      </div>-->
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <!-- Cards: cada um chama a função flipCard(this) -->
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Abril</div>
           <div class="card-back">18 - Vigília-casais<br>23 - Cinema mulheres<br>24 - Oração tabitas<br>25 - Rede homens</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Maio</div>
           <div class="card-back">01 - Piquinique rede de mulheres<br>29 - Pré conferencia tabitas</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Junho</div>
           <div class="card-back">06 - Reunião liderança<br>14 - Festival gourmet-jovens <br>18 - 25 - Pré encontro <br>21 - Chá de panela Dani <br>28 - Jantar casais <br>27, 28 e 29 - Encontro com Deus</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Julho</div>
           <div class="card-back">04 - Rede de mulheres<br>05 - Festival gourmet <br>05 - Vigília estadual <br>11 - Reunião liderança <br>19 - Jejum casais <br>25 e 26 - conferencia nacional mulheres <br>26 - Rede de crianças igreja</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Agosto</div>
           <div class="card-back">01 - Reunião liderança<br>02 - Festival gourmet-jovens <br>15 - Rede de homens <br>30 - Casamento coletivo</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Setembro</div>
           <div class="card-back">05 - Passeio rede de mulheres<br>12 - Reunião liderança <br>19 - Rede de homens <br>20 - Seminário kids canaã <br>20 - Seminário casais</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Outubro</div>
           <div class="card-back">03 - Reunião liderança<br>18 - Passeio dia das crianças <br>24 - confra lideres rede criança <br>31 - culto outubro rosa</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Novembro</div>
           <div class="card-back">07 e 08 - Seminário rede de homens<br>14 - Reunião liderança <br>15 - Rede de casais <br>15 e 16 - Acampa jovem <br>20 - confra rede de mulheres-liderança</div>
         </div>
       </div>
-      <div class="card-flip" onclick="this.classList.toggle('flip')">
+
+      <div class="card-flip" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front">Dezembro</div>
           <div class="card-back">05 - Reunião liderança<br>06 - Rede de crianças <br>20 - confra liderança <br>25 - Culto natal <br>31 - Culto virada</div>
         </div>
       </div>
+
     </div>
   </div>
 
+  <script>
+    function flipCard(card) {
+      const allCards = document.querySelectorAll(".card-flip");
+      const isAlreadyFlipped = card.classList.contains("flip");
+
+      allCards.forEach(c => c.classList.remove("flip"));
+
+      if (!isAlreadyFlipped) {
+        card.classList.add("flip");
+      }
+    }
+  </script>
+
+  <!-- PWA install -->
   <script defer>
-        document.addEventListener("DOMContentLoaded", () => {
-       let installPromptEvent;
-     
-       window.addEventListener("beforeinstallprompt", (event) => {
-         console.log("Evento beforeinstallprompt disparado!");
-         event.preventDefault();
-         installPromptEvent = event;
-         document.getElementById("installBtn").style.display = "block";
-       });
-     
-       window.addEventListener("appinstalled", () => {
-         console.log("PWA instalado!");
-         document.getElementById("installBtn").style.display = "none";
-       });
-     
-       document.getElementById("installBtn").addEventListener("click", () => {
-         if (installPromptEvent) {
-           installPromptEvent.prompt();
-           installPromptEvent.userChoice.then((choiceResult) => {
-             if (choiceResult.outcome === "accepted") {
-               console.log("Usuário aceitou instalar o PWA");
-             } else {
-               console.log("Usuário recusou instalar o PWA");
-             }
-             installPromptEvent = null;
-             document.getElementById("installBtn").style.display = "none";
-           });
-         }
-       });
-     });
-       </script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let installPromptEvent;
 
-    <!-- Service Worker Registration -->
-    <script defer>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registrado com sucesso:', registration);
-                    })
-                    .catch(err => {
-                        console.log('Falha no registro do ServiceWorker:', err);
-                    });
-            });
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        installPromptEvent = event;
+        document.getElementById("installBtn").style.display = "block";
+      });
+
+      window.addEventListener("appinstalled", () => {
+        document.getElementById("installBtn").style.display = "none";
+      });
+
+      document.getElementById("installBtn").addEventListener("click", () => {
+        if (installPromptEvent) {
+          installPromptEvent.prompt();
+          installPromptEvent.userChoice.then(() => {
+            installPromptEvent = null;
+            document.getElementById("installBtn").style.display = "none";
+          });
         }
-    </script>
-</body>
+      });
+    });
+  </script>
 
+  <!-- Service Worker -->
+  <script defer>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registrado com sucesso:', registration);
+          })
+          .catch(err => {
+            console.log('Falha no registro do ServiceWorker:', err);
+          });
+      });
+    }
+  </script>
+</body>
 </html>
+
